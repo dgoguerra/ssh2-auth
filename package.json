@@ -1,0 +1,32 @@
+{
+  "name": "ssh2-auth",
+  "version": "0.1.0",
+  "description": "Wrapper over SSH2's client module to handle the authentication step",
+  "main": "index.js",
+  "dependencies": {
+    "debug": "^2.2.0",
+    "lodash": "^4.3.0",
+    "ssh2": "^0.4.13"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dgoguerra/ssh2-auth.git"
+  },
+  "keywords": [
+    "ssh",
+    "ssh2",
+    "client",
+    "remote",
+    "auth"
+  ],
+  "author": "Diego Guerra <dgoguerra.or@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dgoguerra/ssh2-auth/issues"
+  },
+  "homepage": "https://github.com/dgoguerra/ssh2-auth#readme"
+}
