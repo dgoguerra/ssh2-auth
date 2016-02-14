@@ -17,14 +17,14 @@ In this example we are relying on the default user's public keys for the authent
 var ssh2auth = require('ssh2-auth');
 
 ssh2auth('user@example.com:2222', function(err, conn) {
-	if (err) return console.log(err);
-	var command = 'echo hey there, im $(whoami) at $(hostname)';
-	conn.exec(command, function(err, proc) {
-		proc.stdout.pipe(process.stdout);
-		proc.on('close', function() {
-			conn.end();
-		});
-	});
+    if (err) return console.log(err);
+    var command = 'echo hey there, im $(whoami) at $(hostname)';
+    conn.exec(command, function(err, proc) {
+        proc.stdout.pipe(process.stdout);
+        proc.on('close', function() {
+            conn.end();
+        });
+    });
 });
 ```
 
@@ -32,14 +32,14 @@ Authentication with the provided password, for the current user and default port
 
 ```js
 ssh2auth({ host: 'example.com', password: 'secret' }, function(err, conn) {
-	if (err) return console.log(err);
-	var command = 'echo hey there, im $(whoami) at $(hostname)';
-	conn.exec(command, function(err, proc) {
-		proc.stdout.pipe(process.stdout);
-		proc.on('close', function() {
-			conn.end();
-		});
-	});
+    if (err) return console.log(err);
+    var command = 'echo hey there, im $(whoami) at $(hostname)';
+    conn.exec(command, function(err, proc) {
+        proc.stdout.pipe(process.stdout);
+        proc.on('close', function() {
+            conn.end();
+        });
+    });
 });
 ```
 
@@ -47,13 +47,13 @@ Public key authentication with the identity file in a custom location:
 
 ```js
 ssh2auth({
-	host: 'example.com',
-	port: 'port',
-	user: 'user',
-	// can be an array of key paths instead, to try them until one of them succeeds
-	privateKey: '/path/to/key.pem'
+    host: 'example.com',
+    port: 'port',
+    user: 'user',
+    // can be an array of key paths instead, to try them until one of them succeeds
+    privateKey: '/path/to/key.pem'
 }, function(err, conn) {
-	// ...
+    // ...
 });
 ```
 
