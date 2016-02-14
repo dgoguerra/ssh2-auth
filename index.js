@@ -46,7 +46,7 @@ function authClient(connOpts, next) {
 
 function authWithPassword(connOpts, password, next) {
     authdebug('connecting to %s using password ...',
-        connOpts.username+'@'+connOpts.hostname+':'+connOpts.port
+        connOpts.user+'@'+connOpts.host+':'+connOpts.port
     );
 
     connOpts.password = password;
@@ -65,7 +65,7 @@ function authWithPublicKey(connOpts, keyFile, next) {
     }
 
     authdebug('connecting to %s using public key \'%s\'...',
-        connOpts.username+'@'+connOpts.hostname+':'+connOpts.port,
+        connOpts.user+'@'+connOpts.host+':'+connOpts.port,
         keyFile
     );
 
