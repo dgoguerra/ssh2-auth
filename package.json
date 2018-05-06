@@ -1,6 +1,6 @@
 {
   "name": "ssh2-auth",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Wrapper over SSH2's client module to handle the authentication step",
   "main": "index.js",
   "dependencies": {
