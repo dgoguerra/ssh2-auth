@@ -1,6 +1,5 @@
 var fs = require('fs'),
     path = require('path'),
-    _ = require('lodash'),
     ssh2debug = require('debug')('ssh2'),
     authdebug = require('debug')('auth'),
     Client = require('ssh2').Client;
@@ -98,11 +97,12 @@ module.exports = function(opts, next) {
         '~/.ssh/id_rsa'
     ];
 
-    // if the opts  object is just a string, assume its the host
-    // field.
-    if (_.isString(opts)) opts = { host: opts };
+    // if the opts  object is just a string, assume its the host field
+    if (typeof opts === 'string') {
+        opts = { host: opts };
+    }
 
-    opts = _.extend({}, dflOptions, opts);
+    opts = Object.assign({}, dflOptions, opts);
 
     var authAttempts = [];
 
